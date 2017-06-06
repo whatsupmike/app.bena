@@ -11,7 +11,8 @@
                     <span class="icon-bar"></span>
                 </button>
             @endif
-            <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
+                {{ link_to_route('dashboard', $title=config('app.name'), null, ['class' => 'navbar-brand']) }}
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
