@@ -11,14 +11,15 @@
                     <span class="icon-bar"></span>
                 </button>
             @endif
-            <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
+                {{ link_to_route('dashboard', $title=config('app.name'), null, ['class' => 'navbar-brand']) }}
+
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 @if(Auth::check())
-                    {{-- navigation --}}
+                    <li>{{ link_to_route('car.index', $title='Cars') }}</li>
                 @endif
             </ul>
 
