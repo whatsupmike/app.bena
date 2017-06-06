@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard', 'DashboardController@index');
+        Route::resource('car', 'CarController');
     });
