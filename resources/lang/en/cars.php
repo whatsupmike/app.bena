@@ -23,6 +23,9 @@
             'buttons'=>[
                 'submit' => 'Save'
             ]
+        ],
+        'index' => [
+            'header'=> 'Cars index'
         ]
 
     ];
