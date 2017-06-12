@@ -25,7 +25,8 @@
             ]
         ],
         'index' => [
-            'header'=> 'Cars index'
+            'header'=> 'Cars index',
+            'add_button'=> 'Create car'
         ]
 
     ];
