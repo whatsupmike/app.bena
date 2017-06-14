@@ -26,7 +26,13 @@
         ],
         'index' => [
             'header'=> 'Cars index',
-            'add_button'=> 'Create car'
+            'add_button'=> 'Create car',
+            'table' => [
+                'no' => 'No.',
+                'car_name' => 'Car name',
+                'registration_plate' => 'Registration plate',
+                'actions' => 'Actions'
+]
         ]
 
     ];
