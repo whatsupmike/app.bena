@@ -73,7 +73,8 @@
          */
         public function edit(Car $car)
         {
-            //
+
+            return view('content.car.edit', compact('car'));
         }
 
         /**
@@ -85,7 +86,17 @@
          */
         public function update(Request $request, Car $car)
         {
-            //
+            $this->validate($request, [
+                'name' => 'required',
+                'registrationPlate' => 'required',
+            ]);
+
+            $car->name = $request->name;
+            $car->registrationPlate = $request->registrationPlate;
+
+            $car->update();
+
+            return redirect()->route('car.index');
         }
 
         /**
