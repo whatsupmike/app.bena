@@ -29,7 +29,7 @@
 
         <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
-                {{ Form::button('<i class="fa fa-btn fa-sign-in"></i>'.trans('cars.create.buttons.submit'), [ 'class' => 'btn btn-primary', 'type' => 'button', 'id' =>'car-create-form-submit']) }}
+                {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> '.trans('cars.create.buttons.submit'), [ 'class' => 'btn btn-primary', 'type' => 'submit', 'id' =>'car-create-form-submit']) }}
             </div>
         </div>
 

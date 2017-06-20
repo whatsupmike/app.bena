@@ -37,7 +37,21 @@
          */
         public function store(Request $request)
         {
-            //
+            $this->validate($request, [
+                'car_name' => 'required',
+                'registration_plate' => 'required',
+                'odometer' => 'required|numeric',
+            ]);
+
+            $car = new Car;
+
+            $car->name = $request->car_name;
+            $car->registrationPlate = $request->registration_plate;
+            $car->odometer = $request->odometer;
+
+            $car->save();
+
+            return redirect()->route('car.index');
         }
 
         /**
