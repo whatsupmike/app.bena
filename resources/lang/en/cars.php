@@ -24,6 +24,16 @@
                 'submit' => 'Save'
             ]
         ],
+        'edit' => [
+            'header' => 'Edit car',
+            'labels' => [
+                'car_name' => 'Car name',
+                'registration_plate' => 'Registration plate',
+            ],
+            'buttons'=>[
+                'submit' => 'Update'
+            ]
+        ],
         'index' => [
             'header'=> 'Cars index',
             'add_button'=> 'Create car',
