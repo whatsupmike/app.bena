@@ -12,7 +12,7 @@
         | these language lines according to your application's requirements.
         |
         */
-
+        'navbar' => 'Cars',
         'create' => [
             'header' => 'Add car',
             'labels' => [
@@ -20,7 +20,7 @@
                 'registration_plate' => 'Registration plate',
                 'odometer' => 'Odometer'
             ],
-            'buttons'=>[
+            'buttons' => [
                 'submit' => 'Save'
             ]
         ],
@@ -30,19 +30,19 @@
                 'car_name' => 'Car name',
                 'registration_plate' => 'Registration plate',
             ],
-            'buttons'=>[
+            'buttons' => [
                 'submit' => 'Update'
             ]
         ],
         'index' => [
-            'header'=> 'Cars index',
-            'add_button'=> 'Create car',
+            'header' => 'Cars index',
+            'add_button' => 'Create car',
             'table' => [
                 'no' => 'No.',
                 'car_name' => 'Car name',
                 'registration_plate' => 'Registration plate',
                 'actions' => 'Actions'
-]
+            ]
         ]
 
     ];
