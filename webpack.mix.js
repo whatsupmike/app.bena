@@ -21,6 +21,7 @@ mix.webpackConfig({
 });
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/trips.js', 'public/js')
     .js('resources/assets/js/libs/messages.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css').version();
 
