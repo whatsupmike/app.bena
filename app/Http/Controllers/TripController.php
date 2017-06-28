@@ -17,7 +17,8 @@
          */
         public function index()
         {
-
+            $cars = Car::all();
+            return view('content.trip.index', compact('cars'));
         }
 
         /**
