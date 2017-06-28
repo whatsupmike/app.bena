@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Trip;
 use App\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class TripController extends Controller
@@ -65,9 +66,23 @@ class TripController extends Controller
         });
 
         if ($validator->fails()) {
-            return redirect('trip/create')
+            return redirect()->route('trip.create')
                 ->withErrors($validator)
                 ->withInput();
+        }
+        else{
+            
+            $trip = new Trip();
+
+            $trip->car_id = $car->car_id;
+            $trip->user_id = Auth::id();
+            $trip->odometerBefore = $car->odometer;
+            $trip->odometerAfter = $odometerAfter;
+
+            $trip->save();
+
+            return redirect()->route('trip.index');
+
         }
 
     }
