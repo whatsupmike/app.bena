@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Trip;
 use App\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TripController extends Controller
 {
@@ -46,7 +47,29 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'car_id' => 'required',
+            'odometerAfter' => 'required|integer',
+        ]);
+        $car_id = $request->car_id;
+        $odometerAfter = $request->odometerAfter;
+
+        $validator->after(function ($validator) use ($car_id, $odometerAfter) {
+            $car = Car::find($car_id);
+
+            if($car->odometer >= $odometerAfter){
+                $validator->errors()->add('odometerAfter', trans('trips.js.error.no-negative-trip'));
+            }
+
+
+        });
+
+        if ($validator->fails()) {
+            return redirect('trip/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
     }
 
     /**
