@@ -13,7 +13,6 @@
         |
         */
         'navbar' => 'Trips',
-        
         'create' => [
             'header' => 'Add trip',
             'labels' => [
@@ -24,6 +23,18 @@
             ],
             'buttons' => [
                 'submit' => 'Save'
+            ]
+        ],
+        'edit' => [
+            'header' => 'Edit trip',
+            'labels' => [
+                'odometer_before' => 'Odometer before the trip',
+                'odometer_after' => 'Odometer after the trip',
+                'trip_distance' => 'Trip distance',
+                'car_select' => 'Car',
+            ],
+            'buttons' => [
+                'submit' => 'Update'
             ]
         ],
         'index' => [
