@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Car;
+use App\Trip;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,10 @@ class RouteServiceProvider extends ServiceProvider
         //Route model binding
         Route::bind('car', function($car){
             return Car::findBySlug($car);
+        });
+
+        Route::bind('trip', function($trip){
+            return Trip::findBySlug($trip);
         });
 
 

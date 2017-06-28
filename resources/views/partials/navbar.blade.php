@@ -19,7 +19,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 @if(Auth::check())
-                    <li>{{ link_to_route('car.index', $title='Cars') }}</li>
+                    <li>{{ link_to_route('car.index', $title=trans('cars.navbar')) }}</li>
+                    <li>{{ link_to_route('trip.index', $title=trans('trips.navbar')) }}</li>
                 @endif
             </ul>
 

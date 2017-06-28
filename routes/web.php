@@ -19,4 +19,6 @@ Auth::routes();
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource('car', 'CarController');
+        Route::resource('trip', 'TripController');
     });
+
