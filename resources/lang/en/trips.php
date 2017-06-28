@@ -26,6 +26,17 @@
                 'submit' => 'Save'
             ]
         ],
+        'index' => [
+            'header' => 'Trips index',
+            'add_button' => 'Add trip',
+            'table' => [
+                'no' => 'No.',
+                'car_name' => 'Car name',
+                'distance' => 'Distance',
+                'odometer_after' => 'Odometer after',
+                'actions' => 'Actions'
+            ]
+        ],
         'js' => [
             'error' => [
                 'no-negative-trip' => "Trip can't be negative!"]
