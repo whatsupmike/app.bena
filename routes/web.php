@@ -20,5 +20,6 @@ Auth::routes();
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
         Route::resource('car', 'CarController');
         Route::resource('trip', 'TripController');
+        Route::resource('fuel', 'FuelController');
     });
 
