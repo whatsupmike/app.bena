@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Fuel;
+use App\Car;
 use Illuminate\Http\Request;
 
 class FuelController extends Controller
@@ -24,7 +25,15 @@ class FuelController extends Controller
      */
     public function create()
     {
-        //
+        $carsModels = Car::all();
+
+        $cars = [];
+        foreach ($carsModels as $car) {
+            $cars[$car->car_id] =  $car->name;
+
+        }
+
+        return view('content.fuel.create', compact('cars'));
     }
 
     /**

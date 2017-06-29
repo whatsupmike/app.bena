@@ -13,7 +13,19 @@
         |
         */
         'navbar' => 'Refuelings',
-
+        'create' => [
+            'header' => 'Add refueling',
+            'labels' => [
+                'fuel_quantity' => 'Fuel quantity',
+                'fuel_price' => 'Fuel price',
+                'fuel_value' => 'Fuel value',
+                'is_full' => 'Full refueling',
+                'car_select' => 'Car',
+            ],
+            'buttons' => [
+                'submit' => 'Save'
+            ]
+        ],
 
 
     ];
