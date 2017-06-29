@@ -13,6 +13,16 @@ class Trip extends Model
     protected $primaryKey = 'trip_id';
 
 
+    /**
+     * Get fueling assigned to trip
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function fueling()
+    {
+        return $this->belongsTo('App\Fuel', 'fuel_id', 'fuel_id');
+    }
+    
 
     /**
      * Get car assigned to trip
