@@ -25,3 +25,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/libs/messages.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css').version();
 
+mix.copy('resources/assets/js/helpers.js', 'public/js/helpers.js');
