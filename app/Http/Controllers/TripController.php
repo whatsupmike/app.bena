@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Fuel;
     use App\Trip;
     use App\Car;
     use Illuminate\Http\Request;
@@ -81,6 +82,8 @@
                 $trip->user_id = Auth::id();
                 $trip->odometerBefore = $car->odometer;
                 $trip->odometerAfter = $odometerAfter;
+
+                $trip->fuel_id = Fuel::lastFullFueling($car->car_id)->fuel_id;
 
                 $trip->save();
 

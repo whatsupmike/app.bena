@@ -29,6 +29,7 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/helpers.js') }}"></script>
     <script src="{{ mix('js/messages.js') }}"></script>
     @stack('scripts')
     <script src="https://use.fontawesome.com/93a37374b4.js"></script>
