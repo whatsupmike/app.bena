@@ -74,6 +74,7 @@ class FuelController extends Controller
 
         $fuel->save();
 
+        flash(trans('fuels.messages.success'))->success();
         return redirect()->route('trip.create');
 
     }

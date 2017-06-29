@@ -3,7 +3,9 @@
 @section('content')
     <div class="container-fluid">
         @include('partials.header', ['title' => trans('trips.create.header') ])
+
         <div class="col-md-6 col-md-offset-3">
+            @include('flash::message')
             {{Form::open(['url'=>'trip', 'method'=>'post', 'class'=>'form-horizontal', 'id'=>'trip-create-form'])}}
 
             <div class="form-group {{ $errors->has('car_id') ? 'has-error' : '' }}">

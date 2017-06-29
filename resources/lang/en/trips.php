@@ -51,6 +51,9 @@
         'js' => [
             'error' => [
                 'no-negative-trip' => "Trip can't be negative!"]
+        ],
+        'messages' => [
+            'success' => 'Trip added successfully!',
         ]
 
 

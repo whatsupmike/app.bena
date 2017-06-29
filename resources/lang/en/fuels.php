@@ -26,6 +26,9 @@
                 'submit' => 'Save'
             ]
         ],
+        'messages' => [
+            'success' => 'Refueling added successfully!',
+        ]
 
 
     ];

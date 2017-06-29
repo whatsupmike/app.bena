@@ -90,6 +90,8 @@
                 $car->odometer = $odometerAfter;
                 $car->save();
 
+                flash(trans('trips.messages.success'))->success();
+
                 return redirect()->route('trip.create');
 
             }
