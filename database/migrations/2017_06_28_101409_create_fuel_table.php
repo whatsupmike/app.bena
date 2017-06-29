@@ -32,7 +32,7 @@ class CreateFuelTable extends Migration
 
             $table->foreign('car_id')->references('car_id')->on('cars');
             $table->foreign('user_id')->references('user_id')->on('users');
-            $table->foreign('lastFullFueling')->references('fuel_id')->on('fuel');
+            $table->foreign('lastFullFueling')->references('fuel_id')->on('fuels');
         });
     }
 
