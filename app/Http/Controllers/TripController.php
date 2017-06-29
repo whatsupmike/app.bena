@@ -90,7 +90,7 @@
                 $car->odometer = $odometerAfter;
                 $car->save();
 
-                return redirect()->route('trip.index');
+                return redirect()->route('trip.create');
 
             }
 
