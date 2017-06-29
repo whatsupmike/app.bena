@@ -21,6 +21,7 @@
                 @if(Auth::check())
                     <li>{{ link_to_route('car.index', $title=trans('cars.navbar')) }}</li>
                     <li>{{ link_to_route('trip.index', $title=trans('trips.navbar')) }}</li>
+                    <li>{{ link_to_route('fuel.index', $title=trans('fuels.navbar')) }}</li>
                 @endif
             </ul>
 
