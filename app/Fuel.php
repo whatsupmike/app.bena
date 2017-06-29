@@ -12,6 +12,21 @@ class Fuel extends Model
     use SoftDeletes, Sluggable, SluggableScopeHelpers;
     protected $primaryKey = 'fuel_id';
 
+
+    /**
+     * Get last full fueling for car
+     *
+     * @param $query
+     * @param $car
+     * @return mixed
+     */
+    public function scopeLastFullFueling($query, $car){
+        return $query   ->where('isFullFueling', '=', '1')
+                        ->where('car_id', '=', $car )
+                        ->latest()
+                        ->first();
+    }
+
     /**
      * Get full fueling assigned to (not full) fueling
      *
@@ -26,7 +41,7 @@ class Fuel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function lastFuelings(){
+    public function notFullFuelings(){
         return $this->hasMany(Fuel::class, 'lastFullFueling', 'fuel_id');
     }
 
