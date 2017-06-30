@@ -6,6 +6,19 @@
 
         <div class="col-md-6 col-md-offset-3">
             @include('flash::message')
+            @if($errors->any())
+                <div class="form-group">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="alert alert-danger" role="alert">
+
+                                @foreach($errors->all() as $error)
+                                    {{ $error }}<br>
+                                @endforeach
+
+                        </div>
+                    </div>
+                </div>
+            @endif
             {{Form::open(['url'=>'fuel', 'method'=>'post', 'class'=>'form-horizontal', 'id'=>'fuel-create-form'])}}
 
             <div class="form-group {{ $errors->has('car_id') ? 'has-error' : '' }}">
@@ -65,19 +78,7 @@
                 </div>
             </div>
 
-            @if($errors->any())
-                <div class="form-group">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="alert alert-danger" role="alert">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            @endif
+
 
             {{Form::close()}}
         </div>
