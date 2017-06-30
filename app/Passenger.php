@@ -13,6 +13,14 @@ class Passenger extends Model
     protected $primaryKey = 'passenger_id';
 
     /**
+     * Get assigned user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(){
+        return $this->belongsTo('App\User', 'user_id', 'user_id');
+    }
+    /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
