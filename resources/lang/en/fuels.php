@@ -21,6 +21,7 @@
                 'fuel_value' => 'Fuel value',
                 'is_full' => 'Full refueling',
                 'car_select' => 'Car',
+                'fuel_notes' => 'Refueling notes',
             ],
             'buttons' => [
                 'submit' => 'Save'
