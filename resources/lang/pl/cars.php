@@ -12,18 +12,37 @@
         | these language lines according to your application's requirements.
         |
         */
-
+        'navbar' => 'Samochody',
         'create' => [
             'header' => 'Dodaj samochód',
             'labels' => [
                 'car_name' => 'Nazwa samochodu',
-                'registration_plate' => 'Numer rejestracyjny',
-                'odometer' => 'Licznik'
+                'registration_plate' => 'Tablice rejestracyjne',
+                'odometer' => 'Stan licznika'
             ],
-            'buttons'=>[
+            'buttons' => [
                 'submit' => 'Zapisz'
             ]
+        ],
+        'edit' => [
+            'header' => 'Edytuj samochód',
+            'labels' => [
+                'car_name' => 'Nazwa samochodu',
+                'registration_plate' => 'Tablice rejestracyjne',
+            ],
+            'buttons' => [
+                'submit' => 'Zapisz'
+            ]
+        ],
+        'index' => [
+            'header' => 'Samochody',
+            'add_button' => 'Dodaj samochód',
+            'table' => [
+                'no' => 'Nr.',
+                'car_name' => 'Nazwa samochodu',
+                'registration_plate' => 'Tablice rejestracyjne',
+                'actions' => 'Akcje'
+            ]
         ]
-
 
     ];
