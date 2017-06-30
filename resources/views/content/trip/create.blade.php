@@ -41,6 +41,15 @@
                 </div>
             </div>
 
+            <div class="form-group {{ $errors->has('tripNotes') ? 'has-error' : '' }}">
+
+                {{Form::label('tripNotes', trans('trips.create.labels.trip_notes'), ['class' => 'col-md-4 control-label'])}}
+                <div class="col-md-6">
+                    {{ Form::textarea('tripNotes', old('tripNotes'),['class' => 'form-control', 'style' => 'height:100px !important;']) }}
+                </div>
+            </div>
+
+
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> '.trans('cars.create.buttons.submit'), [ 'class' => 'btn btn-primary', 'type' => 'submit', 'id' =>'trip-create-form-submit']) }}
