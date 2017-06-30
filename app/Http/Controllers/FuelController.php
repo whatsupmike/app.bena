@@ -48,7 +48,7 @@
             $this->validate($request, [
                 'car_id' => 'required',
                 'fuelQuantity' => 'required|numeric',
-                'fuelPrice' => 'required|numeric']);
+                'fuelValue' => 'required|numeric']);
 
 
             if (!$request->exists('isFullFueling')) {
@@ -65,8 +65,8 @@
             $fuel->car_id = $request->car_id;
             $fuel->user_id = Auth::id();
             $fuel->fuelQuantity = $request->fuelQuantity;
-            $fuel->fuelPrice = $request->fuelPrice;
-            $fuel->fuelValue = number_format(($request->fuelQuantity * $request->fuelPrice), 2, '.', '');
+            $fuel->fuelPrice = number_format(($request->fuelValue / $request->fuelQuantity ), 2, '.', '');
+            $fuel->fuelValue = $request->fuelValue;
 
             $fuel->fuelNotes = $request->fuelNotes;
 
