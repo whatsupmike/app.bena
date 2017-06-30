@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('dashboard');
+    return redirect()->route('trip.create');
 });
 
 Auth::routes();

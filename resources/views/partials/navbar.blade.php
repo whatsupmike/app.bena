@@ -25,6 +25,39 @@
                 @endif
             </ul>
 
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right user-nav">
+                <!-- Authentication Links -->
+                @unless(Auth::guest())
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu custom-dropdown-element" role="menu">
+                            <li>
+                                <a href="{{ url('/preferences') }}">
+                                    <i class="fa fa-btn fa-cog"></i> {{ trans('navigation_bar.preferences') }}
+                                </a>
+                            </li>
+                            <li>
+                                
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-btn fa-sign-out"></i> {{ trans('navigation_bar.logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endunless
+            </ul>
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
