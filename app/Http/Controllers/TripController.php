@@ -83,6 +83,8 @@
                 $trip->odometerBefore = $car->odometer;
                 $trip->odometerAfter = $odometerAfter;
 
+                $trip->tripNotes = $request->tripNotes;
+
                 $trip->fuel_id = Fuel::lastFullFueling($car->car_id)->fuel_id;
 
                 $trip->save();
