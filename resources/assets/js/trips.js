@@ -29,7 +29,7 @@ function calculateDistance() {
 
 $(document).ready(function () {
 
-    disableTripSubmitButton(true);
+    calculateDistance();
 
     var odometer = $('#car_select option:selected').data('odometerbefore');
 
