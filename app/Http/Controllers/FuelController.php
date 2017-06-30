@@ -69,6 +69,8 @@ class FuelController extends Controller
         $fuel->fuelPrice = $request->fuelPrice;
         $fuel->fuelValue = number_format(($request->fuelQuantity*$request->fuelPrice), 2, '.', '');
 
+        $fuel->fuelNotes = $request->fuelNotes;
+
         $fuel->isFullFueling = $isFullFueling;
         $fuel->lastFullFueling = $lastFullFueling;
 
