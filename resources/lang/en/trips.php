@@ -55,6 +55,7 @@
         ],
         'messages' => [
             'success' => 'Trip added successfully!',
+            'no-full-fueling' => 'There is no full refueling for this car!'
         ]
 
 

@@ -67,6 +67,10 @@
                     $validator->errors()->add('odometerAfter', trans('trips.js.error.no-negative-trip'));
                 }
 
+                if(Fuel::lastFullFueling(1)->count() == 0){
+                    $validator->errors()->add('lastFullFueling', trans('trips.messages.no-full-fueling'));
+                }
+
 
             });
 
