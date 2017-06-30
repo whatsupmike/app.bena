@@ -2,12 +2,12 @@
  * Created by michaldrzewiecki on 26.06.2017.
  */
 
-function calculateFuelValue(){
+function calculateFuelValue() {
     var quantity = strToFloat($('#fuel-quantity').val());
     var price = strToFloat($('#fuel-price').val());
 
-    if(quantity != 0 && price != 0){
-        $('#fuel-value').html(floatToStr(quantity*price) + " zł");
+    if (quantity != 0 && price != 0) {
+        $('#fuel-value').html(floatToStr(quantity * price) + " zł");
     }
 
 }

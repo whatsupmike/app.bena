@@ -14,7 +14,7 @@
                     {!!  Form::select('car_id', $cars ,old('car_id') ,['class' => 'form-control', 'id' => 'car_select'])!!}
                 </div>
             </div>
-<hr>
+            <hr>
             <div class="form-group {{ $errors->has('fuelQuantity') ? 'has-error' : '' }}">
                 {{Form::label('fuelQuantity', trans('fuels.create.labels.fuel_quantity'), ['class' => 'col-md-4 control-label'])}}
                 <div class="col-md-6">
@@ -36,7 +36,6 @@
             </div>
 
 
-
             <div class="form-group {{ $errors->has('fuelValue') ? 'has-error' : '' }}">
 
                 {{Form::label('fuelValue', trans('fuels.create.labels.fuel_value'), ['class' => 'col-md-4 control-label'])}}
@@ -48,10 +47,10 @@
 
                 {{Form::label('isFullFueling', ' ', ['class' => 'col-md-4 control-label'])}}
                 <div class="col-md-6">
-                   <p style="padding-top: 7px">{{Form::checkbox('isFullFueling', '1', true)}} {{trans('fuels.create.labels.is_full')}}</p>
+                    <p style="padding-top: 7px">{{Form::checkbox('isFullFueling', '1', true)}} {{trans('fuels.create.labels.is_full')}}</p>
                 </div>
             </div>
-<hr>
+            <hr>
             <div class="form-group {{ $errors->has('fuelNotes') ? 'has-error' : '' }}">
 
                 {{Form::label('fuelNotes', trans('fuels.create.labels.fuel_notes'), ['class' => 'col-md-4 control-label'])}}
