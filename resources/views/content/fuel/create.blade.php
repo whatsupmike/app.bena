@@ -51,6 +51,15 @@
                    <p style="padding-top: 7px">{{Form::checkbox('isFullFueling', '1', true)}} {{trans('fuels.create.labels.is_full')}}</p>
                 </div>
             </div>
+
+            <div class="form-group {{ $errors->has('fuelNotes') ? 'has-error' : '' }}">
+
+                {{Form::label('fuelNotes', trans('fuels.create.labels.fuel_notes'), ['class' => 'col-md-4 control-label'])}}
+                <div class="col-md-6">
+                    {{ Form::textarea('fuelNotes', old('fuelNotes'),['class' => 'form-control', 'style' => 'height:100px !important;']) }}
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> '.trans('fuels.create.buttons.submit'), [ 'class' => 'btn btn-primary', 'type' => 'submit', 'id' =>'fuels-create-form-submit']) }}
