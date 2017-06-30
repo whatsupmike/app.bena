@@ -21,6 +21,8 @@ class CreatePassengersTable extends Migration
 
             $table->string('slug')->nullable();
 
+            $table->foreign('user_id')->references('user_id')->on('users');
+            
             $table->softDeletes();
             $table->timestamps();
         });
