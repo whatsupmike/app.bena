@@ -29,6 +29,10 @@ function calculateDistance() {
 
 $(document).ready(function () {
 
+    $('#passengers-select').select2({
+        tags: true
+    });
+
     calculateDistance();
 
     var odometer = $('#car_select option:selected').data('odometerbefore');
@@ -46,4 +50,6 @@ $(document).ready(function () {
     $('#odometer-after').on('change', function () {
         calculateDistance();
     });
+
+
 });
