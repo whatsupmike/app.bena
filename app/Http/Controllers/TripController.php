@@ -105,6 +105,21 @@
                 $car->odometer = $odometerAfter;
                 $car->save();
 
+                foreach ($request->tripPassengers as $passenger_name){
+                    if(intval($passenger_name) == 0){
+
+                        $passenger = new Passenger();
+                        $passenger->name = $passenger_name;
+                        $passenger->save();
+
+                        $trip->passengers()->attach($passenger);
+                    }
+                    else{
+                        $trip->passengers()->attach($passenger_name);
+                    }
+                }
+
+
                 flash(trans('trips.messages.success'))->success();
 
                 return redirect()->route('trip.create');
