@@ -43,6 +43,14 @@ class Trip extends Model
     }
 
     /**
+     * Get passengers from trip
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function passengers(){
+        return $this->belongsToMany(Passenger::class, 'passenger_trip', 'trip_id', 'passenger_id');
+    }
+    /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
