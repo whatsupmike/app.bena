@@ -10,9 +10,9 @@
                 <div class="form-group">
                     <div class="col-md-12">
                         <div class="alert alert-danger" role="alert">
-                                @foreach($errors->all() as $error)
-                                    {{ $error }}<br>
-                                @endforeach
+                            @foreach($errors->all() as $error)
+                                {{ $error }}<br>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     {!!  Form::select_with_data('car_id', $cars ,old('car_id') ,['class' => 'form-control', 'id' => 'car_select'])!!}
                 </div>
             </div>
-<hr>
+            <hr>
             <div class="form-group {{ $errors->has('odometerBefore') ? 'has-error' : '' }}">
 
                 {{Form::label('odometerBefore', trans('trips.create.labels.odometer_before'), ['class' => 'col-md-4 control-label'])}}
@@ -51,7 +51,7 @@
                     <p id="trip-distance" style="padding-top: 7px"></p>
                 </div>
             </div>
-<hr>
+            <hr>
             <div class="form-group {{ $errors->has('tripNotes') ? 'has-error' : '' }}">
 
                 {{Form::label('tripNotes', trans('trips.create.labels.trip_notes'), ['class' => 'col-md-4 control-label'])}}
@@ -66,7 +66,6 @@
                     {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> '.trans('cars.create.buttons.submit'), [ 'class' => 'btn btn-primary col-xs-12', 'type' => 'submit', 'id' =>'trip-create-form-submit']) }}
                 </div>
             </div>
-
 
 
             {{Form::close()}}
