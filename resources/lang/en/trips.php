@@ -20,7 +20,8 @@
                 'odometer_after' => 'Odometer after the trip',
                 'trip_distance' => 'Trip distance',
                 'car_select' => 'Car',
-                'trip_notes' => 'Trip notes'
+                'trip_notes' => 'Trip notes',
+                'trip_passengers' => 'Passengers'
             ],
             'buttons' => [
                 'submit' => 'Save'

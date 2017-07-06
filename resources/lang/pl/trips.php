@@ -20,7 +20,8 @@
                 'odometer_after' => 'Licznik po trasie',
                 'trip_distance' => 'Dystans trasy',
                 'car_select' => 'Samochód',
-                'trip_notes' => 'Notatki'
+                'trip_notes' => 'Notatki',
+                'trip_passengers' => 'Pasażerowie'
             ],
             'buttons' => [
                 'submit' => 'Zapisz'

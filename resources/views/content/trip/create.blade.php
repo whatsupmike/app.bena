@@ -52,6 +52,14 @@
                 </div>
             </div>
             <hr>
+            <div class="form-group {{ $errors->has('tripPassengers') ? 'has-error' : '' }}">
+
+                {{Form::label('tripPassengers', trans('trips.create.labels.trip_passengers'), ['class' => 'col-md-4 control-label'])}}
+                <div class="col-md-6">
+                    {{ Form::select('tripPassengers[]', $passengers, old('tripPassengers'),['class' => 'form-control', 'id' => 'passengers-select', 'multiple'=>'multiple']) }}
+                </div>
+            </div>
+            <hr>
             <div class="form-group {{ $errors->has('tripNotes') ? 'has-error' : '' }}">
 
                 {{Form::label('tripNotes', trans('trips.create.labels.trip_notes'), ['class' => 'col-md-4 control-label'])}}
@@ -75,4 +83,9 @@
 
 @push('scripts')
 <script src="{{ mix('js/trips.js') }}"></script>
+<script src="{{ asset('js/select2.full.min.js') }}"></script>
+@endpush
+
+@push('styles')
+<link href="{{ asset('css/select2.min.css') }}" rel="stylesheet" />
 @endpush

@@ -3,6 +3,7 @@
     namespace App\Http\Controllers;
 
     use App\Fuel;
+    use App\Passenger;
     use App\Trip;
     use App\Car;
     use Illuminate\Http\Request;
@@ -39,6 +40,14 @@
                         'odometerBefore' => number_format($car->odometer, 0, ',', ' ')]];
 
             }
+            $passengers = Passenger::all();
+
+            $data['passengers'] = [];
+
+            foreach ($passengers as $passenger){
+                $data['passengers'][$passenger->passenger_id] = $passenger->name;
+            }
+
             return view('content.trip.create', $data);
         }
 
