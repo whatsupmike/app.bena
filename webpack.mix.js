@@ -25,7 +25,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/trips.js', 'public/js')
     .js('resources/assets/js/fuels.js', 'public/js')
     .js('resources/assets/js/libs/messages.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css').version();
+    .styles('resources/assets/css/app.scss', 'public/css')
+    .version();
 
 mix.copy('resources/assets/js/helpers.js', 'public/js/helpers.js');
+mix.copy('resources/assets/js/libs/select2.full.min.js', 'public/js/select2.full.min.js');
+mix.copy('resources/assets/css/libs/select2.min.css', 'public/css/select2.min.css');
 
