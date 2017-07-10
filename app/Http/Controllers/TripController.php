@@ -44,7 +44,7 @@
 
             $data['passengers'] = [];
 
-            foreach ($passengers as $passenger){
+            foreach ($passengers as $passenger) {
                 $data['passengers'][$passenger->passenger_id] = $passenger->name;
             }
 
@@ -76,7 +76,7 @@
                     $validator->errors()->add('odometerAfter', trans('trips.js.error.no-negative-trip'));
                 }
 
-                if(Fuel::lastFullFueling(1)->count() == 0){
+                if (Fuel::lastFullFueling(1)->count() == 0) {
                     $validator->errors()->add('lastFullFueling', trans('trips.messages.no-full-fueling'));
                 }
 
@@ -105,21 +105,21 @@
                 $car->odometer = $odometerAfter;
                 $car->save();
 
-                foreach ($request->tripPassengers as $passenger_name){
-                    if(intval($passenger_name) == 0){
+                if (count($request->tripPassengers) != 0) {
+                    foreach ($request->tripPassengers as $passenger_name) {
+                        if (intval($passenger_name) == 0) {
 
-                        $passenger = new Passenger();
-                        $passenger->name = $passenger_name;
-                        $passenger->save();
+                            $passenger = new Passenger();
+                            $passenger->name = $passenger_name;
+                            $passenger->save();
 
-                        $trip->passengers()->attach($passenger);
+                            $trip->passengers()->attach($passenger);
+                        } else {
+                            $trip->passengers()->attach($passenger_name);
+                        }
                     }
-                    else{
-                        $trip->passengers()->attach($passenger_name);
-                    }
+
                 }
-
-
                 flash(trans('trips.messages.success'))->success();
 
                 return redirect()->route('trip.create');
