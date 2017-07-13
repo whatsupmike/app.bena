@@ -113,7 +113,7 @@
                             if ($checkedPassenger->count() == 0) {
 
                                 $passenger = new Passenger();
-                                $passenger->name = $passenger_name;
+                                $passenger->name = ucwords($passenger_name);
                                 $passenger->save();
 
                                 $trip->passengers()->attach($passenger);
