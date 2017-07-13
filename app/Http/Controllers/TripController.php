@@ -107,69 +107,79 @@
 
                 if (count($request->tripPassengers) != 0) {
                     foreach ($request->tripPassengers as $passenger_name) {
+
                         if (intval($passenger_name) == 0) {
+                            $checkedPassenger = Passenger::where('name', '=', $passenger_name);
+                            if ($checkedPassenger->count() == 0) {
 
-                            $passenger = new Passenger();
-                            $passenger->name = $passenger_name;
-                            $passenger->save();
+                                $passenger = new Passenger();
+                                $passenger->name = $passenger_name;
+                                $passenger->save();
 
-                            $trip->passengers()->attach($passenger);
+                                $trip->passengers()->attach($passenger);
+                            }else{
+                                $trip->passengers()->attach($checkedPassenger->first());
+                            }
                         } else {
                             $trip->passengers()->attach($passenger_name);
                         }
                     }
 
                 }
-                flash(trans('trips.messages.success'))->success();
+            flash(trans('trips.messages.success'))->success();
 
-                return redirect()->route('trip.create');
-
-            }
+            return redirect()->route('trip.create');
 
         }
 
-        /**
-         * Display the specified resource.
-         *
-         * @param  \App\Trip $trip
-         * @return \Illuminate\Http\Response
-         */
-        public function show(Trip $trip)
-        {
-            //
-        }
+    }
 
-        /**
-         * Show the form for editing the specified resource.
-         *
-         * @param  \App\Trip $trip
-         * @return \Illuminate\Http\Response
-         */
-        public function edit(Trip $trip)
-        {
-            //
-        }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Http\Response
+     */
+    public
+    function show(Trip $trip)
+    {
+        //
+    }
 
-        /**
-         * Update the specified resource in storage.
-         *
-         * @param  \Illuminate\Http\Request $request
-         * @param  \App\Trip $trip
-         * @return \Illuminate\Http\Response
-         */
-        public function update(Request $request, Trip $trip)
-        {
-            //
-        }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Http\Response
+     */
+    public
+    function edit(Trip $trip)
+    {
+        //
+    }
 
-        /**
-         * Remove the specified resource from storage.
-         *
-         * @param  \App\Trip $trip
-         * @return \Illuminate\Http\Response
-         */
-        public function destroy(Trip $trip)
-        {
-            //
-        }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Http\Response
+     */
+    public
+    function update(Request $request, Trip $trip)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Trip $trip
+     * @return \Illuminate\Http\Response
+     */
+    public
+    function destroy(Trip $trip)
+    {
+        //
+    }
     }
