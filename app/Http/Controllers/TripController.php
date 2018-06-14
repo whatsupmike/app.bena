@@ -98,7 +98,7 @@
 
                 $trip->tripNotes = $request->tripNotes;
 
-                $trip->fuel_id = Fuel::lastFullFueling($car->car_id)->fuel_id;
+                //$trip->fuel_id = Fuel::lastFullFueling($car->car_id)->fuel_id;
 
                 $trip->save();
 

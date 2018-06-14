@@ -4,6 +4,7 @@
 
     use App\Fuel;
     use App\Car;
+    use App\Trip;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,8 @@
          */
         public function index()
         {
-            //
+
+
         }
 
         /**
@@ -53,7 +55,7 @@
 
             if (!$request->exists('isFullFueling')) {
                 $isFullFueling = 0;
-                $lastFullFueling = Fuel::lastFullFueling($request->car_id)->fuel_id;
+                $lastFullFueling = null; //Fuel::lastFullFueling($request->car_id)->fuel_id;
 
             } else if ($request->isFullFueling == 1) {
                 $isFullFueling = 1;
@@ -74,6 +76,14 @@
             $fuel->lastFullFueling = $lastFullFueling;
 
             $fuel->save();
+
+            if($isFullFueling == 1){
+                // Assign full fueling to trips
+                $trips = Trip::whereNull('fuel_id')->update(['fuel_id' => Fuel::lastFullFueling($request->car_id)->fuel_id]);
+
+                //Assign full fueling to no full fuelings
+                Fuel::where('isFullFueling', 0)->whereNull('lastFullFueling')->update(['lastFullFueling' => Fuel::lastFullFueling($request->car_id)->fuel_id]);
+            }
 
             flash(trans('fuels.messages.success'))->success();
             return redirect()->route('trip.create');
