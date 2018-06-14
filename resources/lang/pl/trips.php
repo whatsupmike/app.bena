@@ -21,7 +21,8 @@
                 'trip_distance' => 'Dystans trasy',
                 'car_select' => 'Samochód',
                 'trip_notes' => 'Notatki',
-                'trip_passengers' => 'Pasażerowie'
+                'trip_passengers' => 'Pasażerowie',
+                'on_passengers' => 'Trasa rozliczona tylko na pasażerów',
             ],
             'buttons' => [
                 'submit' => 'Zapisz'

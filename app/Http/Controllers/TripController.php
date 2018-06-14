@@ -91,12 +91,20 @@
 
                 $trip = new Trip();
 
+                if (!$request->exists('onPassengers')) {
+                    $onPassengers = 0;
+
+                } else if ($request->onPassengers == 1) {
+                    $onPassengers = 1;
+                }
+
                 $trip->car_id = $car->car_id;
                 $trip->user_id = Auth::id();
                 $trip->odometerBefore = $car->odometer;
                 $trip->odometerAfter = $odometerAfter;
 
                 $trip->tripNotes = $request->tripNotes;
+                $trip->onPassengers = $onPassengers;
 
                 //$trip->fuel_id = Fuel::lastFullFueling($car->car_id)->fuel_id;
 

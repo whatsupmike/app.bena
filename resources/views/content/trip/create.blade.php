@@ -59,6 +59,13 @@
                     {{ Form::select('tripPassengers[]', $passengers, old('tripPassengers'),['class' => 'form-control', 'id' => 'passengers-select', 'multiple'=>'multiple']) }}
                 </div>
             </div>
+            <div class="form-group {{ $errors->has('onPassengers') ? 'has-error' : '' }}">
+
+                {{Form::label('onPassengers', ' ', ['class' => 'col-md-4 control-label'])}}
+                <div class="col-md-6">
+                    <p style="padding-top: 7px">{{Form::checkbox('onPassengers', '1', false)}} {{trans('trips.create.labels.on_passengers')}}</p>
+                </div>
+            </div>
             <hr>
             <div class="form-group {{ $errors->has('tripNotes') ? 'has-error' : '' }}">
 
