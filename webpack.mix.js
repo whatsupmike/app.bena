@@ -24,6 +24,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
     .js('resources/assets/js/trips.js', 'public/js')
     .js('resources/assets/js/fuels.js', 'public/js')
+    .js('resources/assets/js/analysis.js', 'public/js')
     .js('resources/assets/js/libs/messages.js', 'public/js')
     .styles('resources/assets/css/app.scss', 'public/css')
     .version();

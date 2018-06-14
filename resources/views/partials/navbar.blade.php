@@ -22,6 +22,7 @@
                     <li>{{ link_to_route('car.index', $title=trans('cars.navbar')) }}</li>
                     <li>{{ link_to_route('trip.create', $title=trans('trips.navbar')) }}</li>
                     <li>{{ link_to_route('fuel.create', $title=trans('fuels.navbar')) }}</li>
+                    <li>{{ link_to_route('analysis', $title=trans('analysis.navbar')) }}</li>
                 @endif
             </ul>
 

@@ -21,5 +21,8 @@ Auth::routes();
         Route::resource('car', 'CarController');
         Route::resource('trip', 'TripController');
         Route::resource('fuel', 'FuelController');
+        Route::get('/analysis', 'AnalysisController@index')->name('analysis');
+        Route::get('/analysis/settlement', 'AnalysisController@settle')->name('analysis.settlement');
+        Route::post('/analysis/paid', 'AnalysisController@paid');
     });
 
