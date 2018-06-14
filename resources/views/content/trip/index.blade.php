@@ -13,6 +13,7 @@
 
 
             <div class="col-md-offset-3 col-md-6">
+                @include('flash::message')
                 <ul class="nav nav-tabs" role="tablist">
                     @foreach($cars as $car)
                         @if($loop->iteration == 1)
