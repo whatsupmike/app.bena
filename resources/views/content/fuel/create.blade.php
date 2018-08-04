@@ -22,9 +22,16 @@
             {{Form::open(['url'=>'fuel', 'method'=>'post', 'class'=>'form-horizontal', 'id'=>'fuel-create-form'])}}
 
             <div class="form-group {{ $errors->has('car_id') ? 'has-error' : '' }}">
-                {{Form::label('car_id', trans('fuels.create.labels.car_select'), ['class' => 'col-md-4 control-label'])}}
+                {{Form::label('car_id', trans('fuels.create.labels.car_select'), ['class' => 'col-md-4 control-label', 'id'=>'car-select'])}}
                 <div class="col-md-6">
                     {!!  Form::select('car_id', $cars ,old('car_id') ,['class' => 'form-control', 'id' => 'car_select'])!!}
+                </div>
+                <div class="form-group" style="display: none;" id="astra-lpg">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="alert alert-danger" role="alert">
+                            Dla ASTRY wpisujemy tylko tankowanie LPG
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>

@@ -146,6 +146,7 @@ class AnalysisController extends Controller
         foreach ($fullFuels->cursor() as $fuel){
 
             $fuels[$fuel->fuel_id]['id'] = $fuel->fuel_id;
+            $fuels[$fuel->fuel_id]['car_id'] = $fuel->car_id;
             $fuels[$fuel->fuel_id]['amount'] = $fuel->fuelQuantity;
             $fuels[$fuel->fuel_id]['value'] = $fuel->fuelValue;
 

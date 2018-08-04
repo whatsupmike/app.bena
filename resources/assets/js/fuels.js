@@ -30,4 +30,12 @@ $(document).ready(function () {
 
         $(this).unbind('submit').submit(); // continue the submit unbind preventDefault
     });
+    $('#car-select').on('change', function(){
+       if($(this).val() == 3) { //Astra w LPG
+           $('#astra-lpg').show();
+       }
+       else{
+           $('#astra-lpg').hide();
+       }
+    });
 });
