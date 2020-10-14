@@ -29,7 +29,8 @@ class Trip extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function car(){
+    public function car()
+    {
         return $this->belongsTo('App\Car', 'car_id', 'car_id');
     }
 
@@ -38,7 +39,8 @@ class Trip extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User', 'user_id', 'user_id');
     }
 
@@ -47,7 +49,8 @@ class Trip extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function passengers(){
+    public function passengers()
+    {
         return $this->belongsToMany(Passenger::class, 'passenger_trip', 'trip_id', 'passenger_id');
     }
     /**
