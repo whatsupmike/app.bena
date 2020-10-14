@@ -16,15 +16,16 @@ class Fuel extends Model
     /**
      * Get last full fueling for car
      *
-     * @param $query
-     * @param $car
+     * @param  $query
+     * @param  $car
      * @return mixed
      */
-    public function scopeLastFullFueling($query, $car){
+    public function scopeLastFullFueling($query, $car)
+    {
         return $query   ->where('isFullFueling', '=', '1')
-                        ->where('car_id', '=', $car )
-                        ->latest()
-                        ->first();
+            ->where('car_id', '=', $car)
+            ->latest()
+            ->first();
     }
 
     /**
@@ -32,7 +33,8 @@ class Fuel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function fullFueling(){
+    public function fullFueling()
+    {
         return $this->belongsTo(Fuel::class, 'lastFullFueling', 'fuel_id');
     }
 
@@ -41,7 +43,8 @@ class Fuel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function notFullFuelings(){
+    public function notFullFuelings()
+    {
         return $this->hasMany(Fuel::class, 'lastFullFueling', 'fuel_id');
     }
 
@@ -50,7 +53,8 @@ class Fuel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App/User', 'user_id', 'user_id');
     }
 
@@ -59,7 +63,8 @@ class Fuel extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function car(){
+    public function car()
+    {
         return $this->belongsTo('App\Car', 'car_id', 'car_id');
     }
     

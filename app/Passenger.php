@@ -17,7 +17,8 @@ class Passenger extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User', 'user_id', 'user_id');
     }
 
@@ -26,7 +27,8 @@ class Passenger extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function trips(){
+    public function trips()
+    {
         return $this->belongsToMany(Trip::class, 'passenger_trip', 'passenger_id', 'trip_id');
     }
     /**
@@ -42,5 +44,4 @@ class Passenger extends Model
             ]
         ];
     }
-
 }
