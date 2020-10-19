@@ -55,11 +55,11 @@ class FuelController extends Controller
 
         if (!$request->exists('isFullFueling')) {
             $isFullFueling = 0;
-            $lastFullFueling = null; //Fuel::lastFullFueling($request->car_id)->fuel_id;
         } elseif ($request->isFullFueling == 1) {
-            $isFullFueling = 1;
-            $lastFullFueling = null;
+            $isFullFueling = 1;            
         }
+        
+        $lastFullFueling = null;
 
         $fuel = new Fuel();
 
